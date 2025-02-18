@@ -1,0 +1,9 @@
+<svg [attr.xmlns]="SvgTag.Xmlsn" class="d-none">
+    <ng-container *ngFor="let symbolItem of SvgTag.SymbolList">
+        <symbol [id]="symbolItem.Id" [attr.viewBox]="symbolItem.ViewBox">
+            <ng-container *ngFor="let pathItem of symbolItem.PathList">
+                <path [attr.d]="pathItem" />
+            </ng-container>
+        </symbol>
+    </ng-container>
+</svg>

@@ -1,0 +1,33 @@
+<div class="row mb-20">
+    <ng-container *ngFor="let blogItem of posts">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    
+                    <div class="mb-2">
+                        <ng-container *ngFor="let tag of blogItem.categoryList">
+                            <span class="badge bg-success me-1">{{ tag }}</span>
+                        </ng-container>
+                    </div>
+                    <h5 class="mb-0 card-title">{{ blogItem.title | truncate:isSingleColumn ? 40 : 30 }}</h5>
+                    
+                    <div class="mb-1 text-body-secondary">{{blogItem.publishedAt | shortDate}}</div>
+                    <p class="card-text mb-auto" [innerHTML]="blogItem.excerpt | truncateHtml:100"></p>
+                    <a [href]="blogItem.url" target="_blank" class="icon-link gap-1 icon-link-hover stretched-link">
+                        Continue reading
+                        <svg class="bi">
+                            <use xlink:href="#chevron-right" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img [src]="blogItem.imageUrl" alt="{{ blogItem.title }}" 
+                        class="bd-placeholder-img" 
+                        width="200" 
+                        height="250" 
+                        style="object-fit: cover; object-position: center;">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

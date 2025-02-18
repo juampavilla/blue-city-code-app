@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { MediumPost } from '../model/mediumPosts';
+import {GetPostsParams} from '../model/params';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MediumPostsService {
+
+  private apiUrl = 'https://localhost:7113/api/myposts';
+
+  constructor(private http: HttpClient) { }
+  getPosts(paramsObj: GetPostsParams): Observable<MediumPost[]> {
+    const params = new HttpParams()
+      .set('mediumUser', paramsObj.mediumUser)
+      .set('skip', paramsObj.skip.toString())
+      .set('take', paramsObj.take.toString());
+    return this.http.get<MediumPost[]>(this.apiUrl, { params });
+  }
+}
