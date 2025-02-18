@@ -20,8 +20,9 @@
     "@angular/router": "^18.2.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "masonry-layout": "^4.2.2",
     "fast-xml-parser": "^4.5.1",
+    "masonry-layout": "^4.2.2",
+    "node-fetch": "^2.7.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"

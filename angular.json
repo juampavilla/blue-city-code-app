@@ -35,12 +35,20 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-                        "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
-                        "src/assets/color-modes.js"]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
+              "src/assets/color-modes.js"
+            ]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -64,9 +72,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "options": {
-            "proxyConfig": "src/proxy.conf.json"
-          },
+          "options": {},
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
