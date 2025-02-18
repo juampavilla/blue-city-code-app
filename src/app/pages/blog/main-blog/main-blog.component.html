@@ -1,0 +1,9 @@
+<div class="pb-3 mb-3 mt-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-12 px-4">
+        <h1 class="display-4 fst-italic pt-4">{{mainPost.title}}</h1>
+        <p class="lead my-3">{{mainPost.excerpt}}</p>
+        <!-- <div [innerHTML]="mainPost.excerpt | truncateHtml:200"></div> -->
+        <div class="mb-2 text-body-secondary">{{mainPost.publishedAt | shortDate}}</div>
+        <p class="lead mb-0"><a [href]="mainPost.url" class="text-body-emphasis fw-bold">Reading on Medium...</a></p>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<!-- SVG definition
+<svg [attr.xmlns]="SvgTag.Xmlsn" class="d-none">
+  <ng-container *ngFor="let symbolItem of SvgTag.SymbolList">
+    <symbol [id]="symbolItem.Id" [attr.viewBox]="symbolItem.ViewBox">
+      <ng-container *ngFor="let pathItem of symbolItem.PathList">
+        <path [attr.d]="pathItem" />
+      </ng-container>
+    </symbol>
+  </ng-container>
+</svg> -->
+<app-svg [SvgTag]="SvgTag"></app-svg>
+
+<!--theme toggle button -->
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+    aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+    <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+      <!-- <use href="#circle-half"></use> -->
+      <use [attr.href]="currentTheme.RefId"></use>
+    </svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+    <ng-container *ngFor="let themeItem of ThemeList">
+      <button type="button" class="dropdown-item d-flex align-items-center"
+        [attr.aria-pressed]="themeItem.Pressed"
+        [attr.data-bs-theme-value]="themeItem.BrowserId"
+        (click)="onThemeChange(themeItem)">
+        <svg class="bi me-2 opacity-50" width="1em" height="1em">
+          <use [attr.href]="themeItem.RefId"></use>
+        </svg>
+        {{themeItem.Description}}
+        <svg class="bi ms-auto d-none" width="1em" height="1em">
+          <use [attr.href]="RefCheckId"></use>
+        </svg>
+      </button>
+    </ng-container>
+  </ul>
+</div>
+
+<!-- [attr.data-bs-theme-value]="themeItem.BrowserId"  -->

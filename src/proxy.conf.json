@@ -1,0 +1,10 @@
+{
+    "/medium": {
+      "target": "https://medium.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/medium": ""
+      }
+    }
+  }
