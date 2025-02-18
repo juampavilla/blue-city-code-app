@@ -30,7 +30,8 @@ export class MediumPostsService {
 
 
   getMediumFeed(): Observable<MediumFeed> {
-    const url = '/medium/feed/@juampavilla'; // Usa la ruta del proxy
+    //const url = '/medium/feed/@juampavilla'; // with proxy
+    const url = '/.netlify/functions/mediumProxy/feed/@juampavilla'; //netlify functions
     return this.http.get(url, { responseType: 'text' }).pipe(
       map((xml) => {
         const parser = new XMLParser();

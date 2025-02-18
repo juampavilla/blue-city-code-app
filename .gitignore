@@ -134,3 +134,5 @@ dist
 
 # visual code
 .vscode/launch.json
+# Local Netlify folder
+.netlify
