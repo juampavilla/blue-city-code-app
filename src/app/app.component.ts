@@ -12,7 +12,7 @@ import { LoadingComponent } from "./utils/loading/loading.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'code-in-blue-app';
+  title = 'blue-city-code-app';
   selectedSection: string = 'home';
   showSidebar: boolean = false;  
 
