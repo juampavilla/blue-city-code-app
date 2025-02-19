@@ -9,9 +9,9 @@ export const environment = {
     production: true,
     proxyUrl: '/.netlify/functions',
     email: '${_EMAIL}',
-    web: 'bluecitycode.com.ar',
-    linkedin: 'www.linkedin.com/in/juan-pablo-villa-19074013b',
-    youtube: 'youtube.com/@bluecitycode'
+    web: 'https://bluecitycode.com.ar',
+    linkedin: 'https://www.linkedin.com/in/juan-pablo-villa-19074013b',
+    youtube: 'https://youtube.com/@bluecitycode'
   };
 `;
 
