@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const _EMAIL = process.env._EMAIL || 'completeEmail!';
+const _EMAIL = process.env.EMAIL || 'completeEmail!';
 
 // environment.prod.ts file
 const envContent = `
