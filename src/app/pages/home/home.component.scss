@@ -1,0 +1,14 @@
+.profile-picture {
+    width: 150px; /* Tamaño de la imagen */
+    height: 150px; /* Mantener la proporción */
+    border-radius: 30%; /* Hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    margin-bottom: 5px; /* Espacio debajo de la imagen */
+}
+
+@media (max-width: 576px) {
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+}
